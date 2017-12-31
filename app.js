@@ -37,6 +37,13 @@ function createNewToDo(){
   removeItem.type = "button";
   removeItem.textContent = "Remove";
 
+  localStorage.getItem(function() {
+    if (value === null) {
+      return;
+    }
+    toDos = JSON.parse(array);
+  });
+
   //append it to newli
   newLi.textContent = toDo.title;
   toDoList.appendChild(newLi);
@@ -52,7 +59,20 @@ function createNewToDo(){
 
     //call renderTheUI()
   renderTheUI();
-  })
+  localStorage.setItem('array',(JSON.stringify(toDos)));
+});
+  //add eventHandler for checkbox
+  checkbox.addEventListener('CheckboxStateChange',
+    event => {
+      if (checkbox.checked === 'false') {
+        toDo.complete = false;
+      }
+      else if (checkbox.checked === 'true') {
+        toDo.complete = true;
+      }
+      console.log(toDos);
+      localStorage.setItem('array',(JSON.stringify(toDos)));
+    });
 
      newLi.textContent = toDo.title;
      toDoList.appendChild(newLi);
@@ -63,6 +83,7 @@ function createNewToDo(){
  addToDoForm.addEventListener('submit', event => {
    event.preventDefault();
    createNewToDo();
+   localStorage.setItem('array',(JSON.stringify(toDos)));
    newToDoText.value = '';
  });
 
