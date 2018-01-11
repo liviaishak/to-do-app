@@ -1,0 +1,44 @@
+.topbar li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.topbar {
+  position: relative;
+  text-align: center;
+  top: -700px;
+  margin: auto;
+}
+.hero img {
+  width: 100%;
+}
+
+.topbar ul {
+  color: #4c4a57b0;
+  text-transform: uppercase;
+  font-size: smaller;
+  font-family: 'Nunito', sans-serif;
+}
+
+.bottombar {
+  color: dimgrey;
+  text-align: center;
+  font-size: small;
+  font-family: 'Nunito', sans-serif;
+  display: inline;
+  margin: auto;
+  padding: 1px;
+  top: -100px
+  position:relative;
+}
+
+h3 {
+  color: #9e9e9ec4;
+}
+
+.picture2 {
+  float:right;
+  width: 40%
+  display:inline;
+
+}
